@@ -1,0 +1,50 @@
+.link-router{
+    text-decoration: none;
+    color:$logo_green;
+    &:hover{
+       text-decoration: none;
+       color:$logo_orange;
+    }
+ }
+ .link-router-darkcolor{
+    text-decoration: none;
+     color:#000;
+    &:hover{
+       text-decoration: none;
+       color:#000;
+    }
+ }
+.link-router-inverted{
+    text-decoration: none;
+    color:#fff;
+    // background-color:$logo_orange;
+    &:hover{
+       text-decoration: none;
+       color:#fff;
+      //  background-color:$logo_green;
+    }
+ }
+ .link-router-btn{
+    text-decoration: none;
+    color:#fff;
+    &:hover{
+       text-decoration: none;
+       color:#fff;
+    }
+ }
+ .slider-link{
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+      text-decoration: none;
+      color:#fff;
+   }
+ }
+ .main-link{
+   text-decoration: none;
+   color: #fff;
+   &:hover{
+     text-decoration: none;
+     color:#fff;
+  }
+ }

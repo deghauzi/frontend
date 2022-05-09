@@ -1,0 +1,56 @@
+.c-subheader-nav-link, .c-subheader-nav{
+    text-decoration: none;
+    color:inherit;
+    &:hover{
+        text-decoration: none;
+        color:inherit;
+    }
+     &:focus{
+     background-color:#0C5421 !important;
+ }
+}
+.c-header-nav, .dropdown-item{
+    text-decoration: none;
+    color:inherit;
+     &:focus{
+     background-color:#0C5421 !important;
+ }
+}
+
+.c-sidebar{
+background-color:#0F6929 !important;
+}
+
+ .c-sidebar-nav-dropdown-toggle{
+    background-color:#0F6929 !important;
+}
+
+.icon-position {
+    margin-top:-18px;
+}
+  .c-sidebar-nav-link{
+  &:hover{
+    background-color:#C75A00 !important;
+  }
+}
+
+.donations-received-data{
+    width:100%;
+    overflow-x: scroll;
+}
+
+
+.total-donations-received{
+  font-size:1.5rem
+}
+
+.welcome-to-oga{
+  height:300px;
+}
+
+.account_logo_type{
+  border: 2px solid #C75A00;
+  width: 100%;
+  margin-bottom: 3rem;
+  hei
+}

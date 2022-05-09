@@ -1,0 +1,197 @@
+.time-left{
+  width:16%;
+} 
+.time-text{
+  font-size:.8rem;
+}
+.countdown-container{
+  width:60%;
+
+}
+
+.bid-text{
+font-size:1.2rem;
+}
+
+li{
+  list-style:none;
+}
+.bidding-history{
+  width:40%;
+  .bidding-history-icon{
+    border-radius:50%;
+    width:35px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+     background-color: #FA8601;
+     outline:none;
+     border:none;
+  }
+}
+.anonymous-bidding-history{
+  width:40%;
+  .anonymous-bidding-history-icon{
+    border-radius:50%;
+    width:35px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+     background-color: #ccc;
+     outline:none;
+     border:none;
+  }
+}
+
+.auction-container {
+  // width: 100%;
+  // height:450px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1400px;
+  box-sizing: border-box;
+  @media (min-width: 992px) and (max-width: 1199px) {
+    max-width: 960px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    max-width: 720px;
+  }
+  @media (min-width: 576px) and (max-width: 767px) {
+    max-width: 540px;
+  }
+  .auction-image-container {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px 30px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    height: 350px;
+    overflow:hidden;
+    & :hover {
+      transform: translate(0, 0);
+      transition: all 1s linear;  
+    }
+    .auction-image {
+      height: 100%;
+      &:hover{
+         transform: scale(1.2); 
+      }
+    }
+  }
+
+  .auction-detail-container {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px 56px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    height: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media (max-width: 767.99px) {
+      margin-bottom: 200px;
+    }
+    input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+ 
+   .auction-add-minus-container {
+     .sub-auction{
+       width:460px;
+      
+      .auction-add-minus-subcontainer {
+        border: 1px solid #ccc;
+        width: 140px;
+        height: 35px;
+        padding: 0 9px 0 9px;    
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      
+        .bid-amt-input {
+          outline: none;
+          border: none;
+          width: 70px;
+          -moz-appearance: textfield;
+          -webkit-appearance: textfield;
+        }
+        .auction-minus,
+        .auction-add {
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+     }
+      
+      .riauction-container {
+        width: 60px;
+        height:30px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        color: #c75a00;
+        outline: 2px solid #c75a00;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+        margin-top:5px;
+        &:hover {
+          color: #0f6929;
+             outline: 2px solid #0f6929;
+        }
+      }
+    }
+  }
+}
+.auction-tab {
+  margin-top: 60px;
+  @media (max-width: 767.99px) {
+    margin-top: 580px;
+  }
+}
+// end container

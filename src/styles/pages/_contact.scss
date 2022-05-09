@@ -1,0 +1,27 @@
+
+.contact-main{
+    .address-sect{
+        height:400px;  
+        background-color:#f8f9fa;
+        @media screen and (max-width:402px){
+            height:500px;
+        }
+        address{
+            font-size: 1.4rem;
+        }
+        .tel-color, .email-color, .address-color{
+          color:#F78602;
+        }
+        .address-subdiv{
+            background-color: #2e7d32;
+            padding:16px;  
+            border: 1px solid #2e7d32;   
+        }
+        .address-subdiv h5{
+          color:#fff;
+          text-transform: uppercase;
+          font-size: 2rem;
+          font-weight: 400;
+        } 
+    }
+}

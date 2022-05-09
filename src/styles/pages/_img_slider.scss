@@ -1,0 +1,20 @@
+$black: #000;
+$text_color: #fff;
+$white: #fff;
+
+
+.image-slider{
+  background-position: center center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  min-height:calc(100vh - 44vh);
+  transition:transform 100ms ease-in;
+  width:100%;
+}
+
+
+
+
+

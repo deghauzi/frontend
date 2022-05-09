@@ -1,0 +1,105 @@
+// // shipping form
+// .checkout-shipping-form {
+//     height: 800px;
+//     width: 100%;
+//     max-width: 1000px;
+//     margin: 30px 0 0 60px;
+//     padding: 0 15px 0 25px;
+//     box-sizing: border-box;
+//       .checkout-shipping-header {
+//         display: flex;
+//         font-size: 25px;
+//         color: #333e48;
+//         font-weight: 600;
+//         .shipping-header {
+//           border-bottom: $check-border-top $orange_color;
+//           text-decoration: none solid rgb(51, 62, 72);
+//         }
+//       }
+//       .shipping-show{
+//         display:flex;
+//         .shipping-msg{
+//           margin-left: 5px;
+//         }
+//       }
+//       .user-names {
+//        display:flex;
+//         .input-first {
+//           @include border-radius;
+//         }
+//         .input-last {
+//           @include border-radius;
+//         }
+//       }
+//       .address {
+//         @include addresses;
+//         .label {
+//           @include labels;
+//         }
+//         .input-address {
+//           @include address-input;
+//           @include border-radius;
+//         }
+//       }
+//       .city-zip {
+//         display: block;
+//         .label {
+//           @include labels;
+//         }
+//         .inputs {
+//           display: flex;
+//           .city {
+//             @include border-radius;
+//           }
+//           .zip {    
+//             @include border-radius;
+//           }
+//         }
+//       }
+//       .state-label {
+//         margin: 10px 0 3px 5px;
+//         padding-bottom: 5px;
+//       }
+//       .select-state {
+//         @include select-item;
+//         @include border-radius;
+//       }
+//       .ordernote {
+//         height: 140px;
+//         outline: none;
+//         margin-top: 60px;
+//         width: 900px;
+//         border: solid 0.8px #66aef9;
+//         cursor: text;
+//         min-height: 140px;
+//         padding: 26px 26px 26px 26px;
+//         overflow: auto;
+//         box-sizing: border-box;
+//         word-wrap: break-word;
+//         @include border-radius;
+//       }
+//     }
+//     .next-prev-cart {
+//       @include btn;
+//       width: 895px;
+//       margin: -10px 5px 0 15px;
+//       .back-to-cart-btn {
+//         @include prev;
+//         width: 395px;
+//       }
+//       .next-prev {
+//         display: flex;
+
+//         width: 800px;
+//         margin-left: 600px;
+//         .prev-submit-btn {
+//           @include prev;
+//           width: 95px;
+//         }
+//         .next-submit-btn {
+//           @include prev;
+//           width: 95px;
+//         }
+//       }
+//     }
+  

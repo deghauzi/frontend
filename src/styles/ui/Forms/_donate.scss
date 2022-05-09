@@ -1,0 +1,238 @@
+.donate-container {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  padding-left: 80px;
+  .search-filter {
+    .filter-search-btn {
+      margin: 0px;
+      outline: 2px solid #05591b;
+      width: 60px;
+      border: none;
+      padding: 5px 0px 8px 0px;
+      background-color: #fff;
+      border-top-left-radius: 3px;
+      border-top-left-radius: 5px;
+    }
+    .search-donate {
+      width: 70%;
+      outline: none;
+      border: 1px solid #808080;
+      border-radius: 4px;
+      margin-top: 24px;
+      &:focus {
+        outline: 2px solid #e65100;
+        border: none;
+      }
+    }
+  }
+}
+
+//  donate cash/item prompt click
+.ogaDonasi {
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 7px;
+  width:100%;
+  max-width:400px;
+}
+.ogaDonasi .ikon a {
+  background-color: #05591B;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  border-radius: 7px;
+  text-align: center;
+  -webkit-animation: ogaBounce 1s linear 1s infinite normal;
+  animation: ogaBounce 1s linear 1s infinite normal;
+}
+
+.ogaDonasi .ikon {
+  margin-right: 15px;
+}
+.ogaDonasi .deskripsi {
+  line-height: 1.5em;
+}
+.ogaDonasi .deskripsi .judul {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+@keyframes ogaBounce {
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+@-webkit-keyframes ogaBounce {
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+
+//   donate id's show----hide
+
+#donate__cash__form{
+  display:none;
+}
+
+#donate__item__form{
+  // display:none;
+}
+#donate__item__sell__form{
+  // display:none;
+}
+#DonCard{
+  display:block;
+}
+#DonPrompt{
+  display:none;
+}
+#item_match_questionnaire{
+  display:none;
+}
+#donation__share__percentage{
+  display:none;
+}
+
+
+// donate item yes or no
+.wrapper {
+ 	width: 250px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.item-radio {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  display:none;
+}
+.item-radio:checked ~ .main { transform: rotate(68deg) scale(0.8); }
+#no:checked ~ .main { transform: rotate(21deg) scale(0.8); }
+
+.yes-label{
+ 	position: absolute;
+  bottom: 0;
+  font-size: 30px;
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: rgba(0,0,0,0.15);
+  text-shadow: 0 1px 0 white, 0 -1px 0 rgba(150,100,100,0.1); 
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: scaleX(0.8); 
+}
+
+.yes-label:before {
+ 	content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: -25px;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  box-shadow: #0F6929 0px 30px 60px -12px inset, #0F6929 0px 18px 36px -18px inset;
+}
+.no-label{
+ 	position: absolute;
+  bottom: 0;
+  font-size: 30px;
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: rgba(0,0,0,0.15);
+  text-shadow: 0 1px 0 white, 0 -1px 0 rgba(150,100,100,0.1); 
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: scaleX(0.8); 
+}
+
+.no-label:before {
+ 	content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: -25px;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+ box-shadow: #C75A00 0px 14px 28px inset,  #C75A00 0px 10px 10px inset;
+}
+
+label[for=yes] {
+  left: 30px;
+}
+
+label[for=no] {
+  right: 30px;
+}
+
+.donate-message-comment{
+	width:100%;
+	height:120px;
+}
+
+.item-category-condition{
+  display:flex;
+  justify-content:space-between;
+	@media screen and (max-width:430px){
+		display:block;
+	}
+}
+

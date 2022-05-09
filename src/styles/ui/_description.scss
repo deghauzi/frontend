@@ -1,0 +1,43 @@
+@mixin centered() {
+    position: absolute;
+    margin: 0 auto;
+}
+
+@mixin glow() {
+    border: 1px solid white;
+    box-shadow: 
+        0 0 10px 1px #3fff59,
+        0 0 10px 1px #3fff59 inset;
+}
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 0.3; }
+}
+
+#alsquare{    
+    @keyframes rotating {
+        from { transform: rotate(-360deg); }
+        to { transform: rotate(360deg); }
+    }    
+    // @include centered();
+    opacity: 0;
+    @include glow();
+    animation: appear 3s linear forwards;
+    animation-delay: 5s; 
+    .center {
+        @include centered();
+        width:40px;
+        height:140px;
+        @include glow();
+        animation: rotating 12s linear infinite;
+    }  
+    .center.square1 { animation-delay: 1.4s; }
+    .center.square3 { animation-delay: 5.2s; }
+    .center.square4 {
+        animation-delay: 2.6s; 
+        animation-duration: 10s;
+        animation-direction: reverse;
+        width:40px;
+        height:140px;
+    }
+}

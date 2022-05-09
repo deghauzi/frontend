@@ -1,0 +1,354 @@
+// Note: Swap to 3d transforms for hardware acceleration & improved performance
+// Setup some variables
+$speed: "0.5s";
+$hard-transition: all #{$speed} cubic-bezier(0, 0, 0.1, 1) 0s;
+$soft-transition: all #{$speed} cubic-bezier(0, 0, 0.5, 1) 0s;
+$button-height: 3rem;
+$logo_green:#05591b; 
+$logo_orange:#C75A00;
+
+// Some defaults & resets
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Just to emphasize a viewport
+.viewport {
+  position:relative;
+  margin: 5px auto 5px auto;
+  width: 400px;
+  // height: 148px;
+  transform: translateY(25%);
+  .btn-container {
+  // Set the button
+  position: relative;
+  background-color:$logo_orange;
+  border: 1px solid #efefef;
+  margin: 9px auto;
+  width: 90%;
+  height: $button-height;
+ 
+  > div {
+    // Shared styling for both buttons.
+    position: absolute;
+    width: 50%;
+    background-color:$logo_orange;
+    color: #fff;
+    text-align: center;
+
+    // Styling for button labels. They are the same, so the default and hover states live here.
+    span {
+      line-height: $button-height;
+      transition: $soft-transition;
+      transition-delay: 1s;
+    }
+
+    // Hover States for both buttons.
+
+    &:hover {
+      background-color: $logo_green;
+      span {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+    }
+
+    &:first-child {
+      // Adds a separator after the first button. Animation settings for this are in the search class.
+      &:after {
+        content: "";
+        width: 1px;
+        background-color: #555;
+        height: 70%;
+        position: absolute;
+        right: 0px;
+        top: 15%;
+        transition: $hard-transition;
+      }
+
+      span {
+        transition-delay: 0.25s;
+      }
+    }
+  }
+
+  // Search Button Interaction
+
+  &__search {
+    // Default state styling
+    overflow: hidden;
+    transition: $hard-transition;
+    transition-delay: 0.2s;
+    z-index: 1;
+
+    .search_input {
+      position: absolute;
+      font-size: 18px;
+      top: 0;
+      height: $button-height;
+      border: none;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      z-index: 2;
+      width: 80%;
+      transform: translateX(-190%);
+      transition: transform 0s linear 0s;
+      transition-delay: 0s;
+    }
+
+    svg {
+      height: $button-height;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .field-circle {
+      transform: translateY(0) translateX(-100px) scale(0);
+      transition: $hard-transition;
+      transition-delay: 0.2s;
+    }
+
+    .btn-search {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: $button-height; // Hide the button
+      width: 20%;
+      height: 100%;
+      line-height: $button-height; // Ensure the button is the height of the button
+      transition: $hard-transition;
+      transition-delay: 0s;
+      cursor: pointer;
+    }
+
+    .icon-search {
+      width: 50%;
+      transform: scale(0.5) translateX(165%) translateY(120%);
+    }
+
+    // Search Button Hover State
+
+    &:hover {
+      // Widen the Search button
+      width: 100%;
+      z-index: 1;
+      transition-delay: 0s;
+
+      // Fade out the "Search" label
+      span {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+
+      // Bring in the circle to fill in the input field background
+
+      .field-circle {
+        transform: translateY(-50%) translateX(10px) scale(2.5);
+        transition-delay: 0s;
+      }
+
+      // Bring in the Search Icon
+
+      .btn-search {
+        top: 0;
+        transition-delay: 0.3s;
+      }
+
+      // Fade out the small separator
+
+      &:after {
+        opacity: 0;
+      }
+
+      // Animate the input box
+      .search_input {
+        transform: translateX(-75%);
+        transition: transform 0s linear 1s;
+      }
+    }
+  }
+  // Filter Button Interaction
+
+  &__filter {
+    left: 50%;
+    transition: $hard-transition;
+    transition-delay: 1s;
+
+    .filter-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    // Positoning for the arrow svg
+    svg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      transform: translateX(-90%);
+      transition: $hard-transition;
+      transition-delay: #{$speed};
+      .the-arrow {
+        transform-origin: center center;
+        transition: all #{$speed} cubic-bezier(0, 0, 0.5, 1) 0s;
+      }
+    }
+
+    // The actual box for the dropdown selector.
+    .filter-dropdown {
+      overflow: hidden; // Hide the text!
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-top: 3px solid #ddd;
+      transform: translateY(0);
+      .filter-item{
+        background-color: #dedede;
+        .filter-links {
+          display: block;
+          padding: 1rem;
+          font-size: 0.8rem;
+          width: 100%;
+          color: black;
+          box-sizing: border-box;
+        }
+
+        &:nth-child(odd) {
+          background-color: #efefef;
+        }
+      }
+    }
+
+    // Filter Label is the dropdown's default "selection" area.
+
+    .filter-label {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: $button-height;
+      background-color: #ccc;
+      transition: $hard-transition;
+      transition-delay: #{$speed};
+
+      // Styling for the text inside the dropdown label
+      span {
+        color: #666;
+        opacity: 0;
+        transition: $hard-transition;
+        transition-delay: 0s;
+      }
+    }
+
+    // Filter Button Hover Changes
+
+    &:hover {
+      // Expand the Filter Button
+      width: 100%;
+      left: 0;
+      z-index: 1;
+      transition-delay: 0s;
+
+      // Animate the Arrow
+
+      svg {
+        transform: translateY(-48px) translateX(-90%);
+        .the-arrow {
+          transform: rotate(180deg);
+          transition: #{$speed} cubic-bezier(0, 0, 0.5, 1) 1.35s;
+        }
+      }
+
+      // Bring in the Label
+      .filter-label {
+        width: 80%;
+        transition-delay: 0.25s;
+
+        span {
+          opacity: 1;
+          transition-delay: 0.5s;
+        }
+      }
+
+      // Pop out the dropdown menu
+
+      .filter-dropdown {
+        animation: filter-open #{$speed} 1s ease 1 forwards;
+      }
+    }
+  }
+}
+}
+
+@keyframes filter-open {
+  0% {
+    width: 0;
+    height: 3px;
+  }
+
+  40% {
+    width: 90%;
+    height: 3px;
+  }
+
+  50% {
+    width: 100%;
+    height: 3px;
+  }
+
+  51% {
+    width: 100%;
+    border-top: 0;
+  }
+
+  90% {
+    width: 100%;
+    height: 285px;
+    border-top: 0;
+  }
+
+  100% {
+    width: 100%;
+    height: auto;
+    border-top: 0;
+  }
+}
+
+.all_donate_item_cards{
+  position:relative;
+}
+
+
+.searched-data-container{
+   width:100%;
+   position:absolute;
+   z-index:400 !important;
+  .searched-data-subcontainer{
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    border-radius:3px;
+    height:auto;
+    border:1px solid #ccc;
+    .searched-data-list{
+      list-style-type:none;
+      cursor:pointer;
+       padding:8px 5px 8px 5px;
+      &:hover{
+        background-color:#ccc;
+       
+      }
+    }
+  }
+}

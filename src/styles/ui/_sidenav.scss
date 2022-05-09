@@ -1,0 +1,239 @@
+// side-nav styling
+$text_color: #fff;
+$logo_green: #05591b;
+$logo_orange: rgb(199, 90, 0);
+$top_nav:#f39a8e;
+
+*{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+// Side Nav styles
+.side-navbar-content{
+  display:flex;
+  flex-direction: column;
+  .side-nav-bullet{
+    list-style: none;
+  }
+  .side-nav-affiliate{
+    cursor:pointer;
+  }
+// second-navbar
+  ul {
+    list-style-type: none;
+  }
+   .side-nav-item {
+     padding: 0px 6px; 
+    text-decoration: none;
+    padding:10px 5px;
+     .side-navigation-link {
+      padding: 0px 10px !important;
+      color:#000;
+    }
+    & a:hover, .side-navigation-link:hover, .side-nav-item, .side-sub-navigation-link:hover{
+      text-decoration: none;
+      opacity:.8
+    }
+    & a:focus, .side-navigation-link:focus, .side-navigation-link:hover{
+      text-decoration: none;
+    }
+  
+    .side-navigation-link--active {
+      border-bottom: 2px solid $logo_orange;
+      transition: border-bottom .5s ease-in-out; 
+      &:hover{
+        border:none;
+      }
+    }
+  }
+
+    .fund-side-nav-item, .donate-side-nav-item {
+      position: relative;
+        &:hover{
+          .side-nav__submenu{
+            visibility: visible;
+            opacity: 1;
+            transition: 0.3s visibility ease-in 0.1s, 0.4s opacity ease-out;
+          }
+        }     
+      & .side-nav__submenu{
+        position: absolute;
+        z-index: 1000;
+        width: 200px;
+        background-color:$logo_green;
+        padding:0px;
+        top: 30px;
+        border-radius: 8px;
+        visibility: hidden;
+        opacity: 0;
+       
+        & .side-nav__submenu-item{
+          padding: 7px 0px 7px 0px;
+         
+          &:hover{
+            background-color: $logo_orange;
+          }
+          & #personal, #business, #community,  #startup{      
+            color:#fff; 
+            padding: 7px 132px 7px 4px;
+            &:hover{
+              color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #startup, #see-all{
+            color:#fff; 
+            padding: 7px 139px 7px 4px;
+            &:hover{
+              color:#fff;
+                background-color: $logo_orange;
+          }
+        }
+          #ngo{
+            color:#fff; 
+            padding: 7px 159px 7px 4px;
+            &:hover{
+              color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #community{  
+            color:#fff; 
+            padding: 7px 114px 7px 4px;
+            &:hover{
+              color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #contact{    
+            color:#fff; 
+            padding: 7px 120px 7px 4px;
+            &:hover{
+               color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #about{    
+            color:#fff; 
+            padding: 7px 130px 7px 4px;
+            &:hover{
+               color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #auction{
+            color:#fff; 
+            padding: 7px 68px 7px 4px;
+            &:hover{
+               color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #donate-cash, #donate-item{
+            color:#fff; 
+            padding: 7px 104px 7px 4px;
+            &:hover{
+               color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+          #donate-ogadonate{
+            color:#fff; 
+            padding: 7px 40px 7px 4px;
+            &:hover{
+               color:#fff;
+                background-color: $logo_orange;
+            }
+          }
+        }
+   
+        }
+       
+    } 
+  
+}//side nav
+
+
+  // menu toggle
+  .menu-toggle { 
+      @media (min-width: 450px) {
+      display: none;  
+    }
+  .menu-button{
+    outline:none;
+    border:none;
+    background:none;  
+    width:40px;
+    font-size: 40px;
+    padding:25px 14px;
+    color:#fff;
+    cursor:pointer;
+  }
+  }
+
+
+  .SideDrawer {
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3000;
+    background-color: white;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    @media (min-width: 1078px) {
+      display:none;
+    }
+  }
+  .Open {
+    transform: translateX(0);
+  }
+  
+  .Close {
+    transform: translateX(-100%);
+  }
+
+  .times_utf{
+    display:flex;
+    justify-content: flex-end;
+    .times-bt-container {
+      .times-bt {
+        outline: none;
+        border: none;
+        background: none;
+        color: #333333;
+        font-size: 45px;
+        padding-bottom:10px;
+        .times-bt:focus {
+          border: none;
+          outline: none;
+        }
+     }
+    }
+  }
+  
+  
+   
+  // side nav social icons
+
+  .sidenav-social-icons{
+    margin-top:260px;
+    width:100%;
+    height:100px;
+      .twitter-icon, .facebook-icon, .instagram-icon{
+        padding:10px 10px;
+        cursor:pointer;
+      }
+      .fitwitter, .imfacebook, .ioinstagram{
+         font-size:1.3rem;
+         color:$logo_green;
+         &:hover{
+           color:$logo_orange;
+         }
+      }
+    }

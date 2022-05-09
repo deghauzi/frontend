@@ -1,0 +1,69 @@
+
+*{
+	box-sizing: border-box;
+}
+
+/*form styles*/
+.oga_item_form_parent{
+	max-width:560px;
+	margin:10px auto;
+	width:100%;
+}
+.oga_cash_form_parent{
+	max-width:560px;
+	margin:10px auto;
+	width:100%;
+}
+.fundforms_container{
+	border:1px solid #ccc;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px 56px 20px;
+	box-sizing: border-box;
+	width: 100%;
+	max-width:900px;
+	position: relative;
+ }
+
+/*inputs*/
+.input-text, .input-number, .input-file, .input-textarea, .input-date, textarea{
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	 outline:none;
+	 &:focus{
+		border:1px solid #0F6929 !important;
+	 }
+}
+
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+// label
+.attest{
+	border:1px solid #ccc;
+	padding:20px 10px;
+}
+
+.pay-input-field{
+	height:30px;
+}
+
+
