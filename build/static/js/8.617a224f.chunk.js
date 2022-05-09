@@ -1,2 +1,0 @@
-(this.webpackJsonpdeghauzimicrolending=this.webpackJsonpdeghauzimicrolending||[]).push([[8],{935:function(e,n,t){"use strict";t.r(n);var i=t(2),c=t(7),u=Object(i.lazy)((function(){return Promise.all([t.e(6),t.e(10)]).then(t.bind(null,927))}));n.default=function(){return Object(i.useEffect)((function(){document.title="De-Ghauzi | Dashboard"}),[]),Object(c.jsx)(c.Fragment,{children:Object(c.jsx)("div",{children:Object(c.jsx)(u,{})})})}}}]);
-//# sourceMappingURL=8.617a224f.chunk.js.map
