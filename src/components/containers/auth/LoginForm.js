@@ -86,71 +86,32 @@ export default function LoginForm() {
     return (<Redirect to="/dashboard" />);
   }
 
-  return (
-    <Container component="main" maxWidth="xs">
+  return <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-      <img src={logo} alt="de-ghauzi" title="de-ghauzi"/>
-         <Typography component="h1" variant="h5">
-           Welcome back login to continue
-         </Typography>
+        <img src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/logo.png" alt="de-ghauzi" title="de-ghauzi" />
+        <Typography component="h1" variant="h5">
+          Welcome back login to continue
+        </Typography>
         <form className={classes.form}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            value={values.email}
-            onChange={handleChange('email')}
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            id="password"
-            autoComplete="current-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
-            InputProps={{
-              endAdornment: <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {values.showPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>,
-            }}
-          />
+          <TextField variant="outlined" margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" value={values.email} onChange={handleChange("email")} autoFocus />
+          <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Password" id="password" autoComplete="current-password" type={values.showPassword ? "text" : "password"} value={values.password} onChange={handleChange("password")} InputProps={{ endAdornment: <InputAdornment position="end">
+                  <IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end">
+                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment> }} />
           {/* <InfoView/> */}
           {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           /> */}
-          <Button
-            onClick={onSubmit}
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            {isLoading ? <CircularProgress/> :"Sign In"}
+          <Button onClick={onSubmit} fullWidth variant="contained" color="primary" className={classes.submit}>
+            {isLoading ? <CircularProgress /> : "Sign In"}
           </Button>
-          
+
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link href="/reset-password" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
@@ -160,6 +121,5 @@ export default function LoginForm() {
       <Box mt={6} mb={6}>
         <Copyright />
       </Box>
-    </Container>
-  );
+    </Container>;
 }

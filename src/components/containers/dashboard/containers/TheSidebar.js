@@ -22,9 +22,12 @@ const TheSidebar = () => {
   const dispatch = useDispatch();
   const account_image = useSelector(state => state.contributionReducer);
   const { mainAccount } = account_image;
-  const image = mainAccount.length && mainAccount.map(acc => {
-      return acc.bank_account_type["account_type_image"];
+  const image =
+    mainAccount.length &&
+    mainAccount.map(acc => {
+      return acc.bank_account_type["name"];
     });
+  console.log(image);
   const useStyles = makeStyles(theme => ({
     large: {
       width: theme.spacing(20),
@@ -45,7 +48,7 @@ const TheSidebar = () => {
     >
       <CSidebarBrand className="d-md-down-none" to="/">
         <h4 className="text-center">De-Ghauzi</h4>
-        <CIcon className="c-sidebar-brand-minimized" name="sygnet" height={10} /> 
+        <CIcon className="c-sidebar-brand-minimized" name="sygnet" height={10} />
       </CSidebarBrand>
       <CSidebarNav>
         <CCreateElement
@@ -58,10 +61,41 @@ const TheSidebar = () => {
           }}
         />
       </CSidebarNav>
-
-      <div className="account_logo_type">
-        <Avatar src={image} className={classes.large} alt={"user.username"} />
-      </div>
+      {image == "Diamond"
+        ? <div className="account_logo_type">
+            <Avatar
+              src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/IMG-20211026-WA0000.jpg"
+              className={classes.large}
+              alt="image-logo"
+            />
+          </div>
+        : image == "Gold"
+          ? <div className="account_logo_type">
+              <Avatar
+                src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/IMG-20211025-WA0017.jpg"
+                className={classes.large}
+                alt="image-logo"
+              />
+            </div>
+          : image == "Silver"
+            ? <div className="account_logo_type">
+                <Avatar
+                  src="https://deghauzimicrolending.com/wp-content/uploads/2021/11/silver.jpg"
+                  className={classes.large}
+                  alt="image-logo"
+                />
+              </div>
+            : image == "Platinum"
+              ? <div className="account_logo_type">
+                  <Avatar
+                    src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/IMG-20211025-WA0000.jpg"
+                    className={classes.large}
+                    alt="image-logo"
+                  />
+                </div>
+              : <div className="account_logo_type">
+                  <Avatar src="imge" className={classes.large} alt="image-logo" />
+                </div>}
     </CSidebar>
   );
 };

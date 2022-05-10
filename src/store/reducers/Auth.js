@@ -10,7 +10,8 @@ const initialState = {
   accountCreated: null,
   user: localStorage.getItem("de_user"),
   isAdmin: false,
-  changePassword: false
+  changePassword: false,
+  emailSent: false
 };
 
 const auth = (state = initialState, action) => {
@@ -46,6 +47,11 @@ const auth = (state = initialState, action) => {
     return {
       ...state,
       changePassword: true
+    };
+    case actionTypes.PASSWORD_RESET_SUCCESS:
+    return {
+      ...state,
+      emailSent: true
     };
     case actionTypes.AUTHENTICATED_FAIL:
     return {

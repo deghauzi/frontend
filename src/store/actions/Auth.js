@@ -23,9 +23,8 @@ import {
   SHOW_ERROR_MESSAGE,
   FETCH_PERSONAL_PROFILE_SUCCESS,
   FETCH_PERSONAL_PROFILE_FAIL,
-  GET_SINGLE_PERSONAL_PROFILE_FAIL,
-  GET_SINGLE_PERSONAL_PROFILE_SUCCESS,
-  HIDE_MESSAGE
+  PASSWORD_RESET_CONFIRM_SUCCESS,
+  PASSWORD_RESET_CONFIRM_FAIL
 } from "./ActionTypes";
 
 
@@ -214,15 +213,12 @@ export const verify = ({ uid, token }) => async dispatch => {
 
 // request password change
 export const reset_password = ({ email }) => async dispatch => {
-  dispatch(setLoading());
   const body = { email };
   try {
     await axiosInstance.post("auth/users/reset_password/", body);
     dispatch({
       type: PASSWORD_RESET_SUCCESS
     });
-    dispatch(stopSubmit("resetForm"));
-    dispatch(reset("resetForm"));
     dispatch({
       type: SHOW_SUCCESS_MESSAGE,
       payload:
@@ -232,9 +228,6 @@ export const reset_password = ({ email }) => async dispatch => {
     dispatch({
       type: PASSWORD_RESET_FAIL
     });
-    dispatch(offLoading());
-    dispatch(stopSubmit("resetForm"));
-    dispatch(reset("resetForm"));
   }
 };
 
@@ -247,17 +240,33 @@ export const fetchPersonalProfile = () => async (dispatch, getState) => {
   }
 };
 
-// fetch single personal profile
-export const singlePersonalProfile = id => async (dispatch, getState) => {
+export const reset_password_confirm = (
+  uid,
+  token,
+  new_password,
+  re_new_password
+) => async dispatch => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  const body = JSON.stringify({ uid, token, new_password, re_new_password });
+  dispatch(setLoading());
   try {
-    const res = await axiosInstance.get(`/accounts/profile/personal/${id}`, tokenConfig(getState));
+    await axiosInstance.post("/auth/users/reset_password_confirm/", body, config);
     dispatch({
-      type: GET_SINGLE_PERSONAL_PROFILE_SUCCESS,
-      payload: { id, res }
+      type: PASSWORD_RESET_CONFIRM_SUCCESS
     });
-  } catch (error) {
+    dispatch(offLoading());
+    dispatch({ type: SHOW_SUCCESS_MESSAGE, payload: "Password Change Successfully" });
+  } catch (err) {
+    dispatch(offLoading());
     dispatch({
-      type: GET_SINGLE_PERSONAL_PROFILE_FAIL
+      type: PASSWORD_RESET_CONFIRM_FAIL
     });
+    dispatch({ type: SHOW_SUCCESS_MESSAGE, payload: "Password Change Fail" });
   }
 };
+
