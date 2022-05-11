@@ -88,13 +88,13 @@ const TheSidebar = () => {
             : image == "Platinum"
               ? <div className="account_logo_type">
                   <Avatar
-                    src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/IMG-20211025-WA0000.jpg"
+                    src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/IMG-20211025-WA0016.jpg"
                     className={classes.large}
                     alt="image-logo"
                   />
                 </div>
               : <div className="account_logo_type">
-                  <Avatar src="imge" className={classes.large} alt="image-logo" />
+                  <Avatar src="https://deghauzimicrolending.com/wp-content/uploads/2021/10/logo.png" className={classes.large} alt="image-logo" />
                 </div>}
     </CSidebar>
   );
